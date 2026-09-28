@@ -1,6 +1,7 @@
 import CapabilitiesSection from "@/components/sections/CapabilitiesSection";
 import HeroSection from "@/components/sections/HeroSection";
 import Models from "@/components/sections/Models";
+import PreviewSection from "@/components/sections/PreviewSection";
 import Image from "next/image";
 
 export default function Home() {
@@ -9,6 +10,7 @@ export default function Home() {
       <HeroSection/>
       <CapabilitiesSection/>
       <Models/>
+      <PreviewSection/>
     </div>
   );
 }

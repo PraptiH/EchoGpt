@@ -10,6 +10,17 @@
   --color-linear: #fAf9f6;
   --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
   --font-mono: var(--font-geist-mono), ui-monospace, monospace;
+
+  --animate-spin-ring: spin-ring 36s linear infinite;
+
+  @keyframes spin-ring {
+    from {
+      transform: translateZ(calc(var(--ring-radius) * -1)) rotateX(-6deg) rotateY(0deg);
+    }
+    to {
+      transform: translateZ(calc(var(--ring-radius) * -1)) rotateX(-6deg) rotateY(-360deg);
+    }
+  }
 }
 
 body {
