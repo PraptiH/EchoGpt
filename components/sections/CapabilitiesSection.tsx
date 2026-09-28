@@ -2,7 +2,7 @@ import { capabilities } from "@/data/capabilities";
 
 export default function CapabilitiesSection() {
     return (
-        <section className="bg-linear w-full px-6 py-20">
+        <section className="bg-surface/5 w-full px-6 py-20">
             <div className="mx-auto max-w-6xl">
                 <div className="mx-auto mb-12 max-w-2xl space-y-3 text-center">
                     <h2 className="text-3xl font-bold text-ink md:text-4xl">Powerful capabilities out of the box</h2>
