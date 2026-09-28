@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { LazyMotion, domAnimation, m } from "framer-motion";
 import Image from "next/image";
 import type { CSSProperties } from "react";
 
@@ -21,12 +21,14 @@ const angleStep = 360 / panels.length;
 
 export default function PreviewSection() {
     return (
+        <LazyMotion features={domAnimation}>
         <section className="relative w-full overflow-hidden bg-line px-6 py-20">
             <div aria-hidden className="pointer-events-none absolute left-1/2 top-1/2 h-96 w-[48rem] -translate-x-1/2 
-            -translate-y-1/2 rounded-full bg-primary/30 blur-3xl"/>
+            -translate-y-1/2 rounded-full bg-primary/30 blur-3xl"
+            />
 
             <div className="relative mx-auto max-w-6xl">
-                <motion.div
+                <m.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: false, amount: 0.3 }}
@@ -39,13 +41,13 @@ export default function PreviewSection() {
                     <p className="text-sm leading-relaxed text-muted md:text-base">
                         Explore the EchoGPT workspace built for seamless conversations, model switching, and AI-powered productivity.
                     </p>
-                </motion.div>
+                </m.div>
 
-                <motion.div
+                <m.div
                     initial={{ opacity: 0, scale: 0.92 }}
                     whileInView={{ opacity: 1, scale: 1 }}
                     viewport={{ once: true, amount: 0.2 }}
-                    transition={{ duration: 0.8, ease: "easeOut" }}
+                    transition={{ duration: 2, ease: "easeOut" }}
                     className="group relative flex h-[300px] items-start justify-center pt-8 [--panel-w:260px] [--ring-radius:calc(var(--panel-w)*1.05)] [perspective:1400px] md:h-[480px] md:pt-12 md:[--panel-w:480px]"
                 >
                     <div className="relative aspect-[16/10] w-[var(--panel-w)] animate-spin-ring [transform-style:preserve-3d] group-hover:[animation-play-state:paused] motion-reduce:animate-none">
@@ -72,8 +74,9 @@ export default function PreviewSection() {
                             </figure>
                         ))}
                     </div>
-                </motion.div>
+                </m.div>
             </div>
         </section>
+        </LazyMotion>
     );
 }

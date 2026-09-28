@@ -17,8 +17,15 @@ export default function HeroSection() {
                 <button className="bg-white border border-gray-200">Watch 2 Min Demo</button>
             </div>
 
-            <div className="my-5">
-                <Image src={heroDark} alt="hero-dark" className="w-full h-full object-cover rounded-lg"/>
+            <div className="my-5 w-full px-6 lg:max-w-4xl xl:max-w-5xl">
+                <Image
+                    src={heroDark}
+                    alt="EchoGPT app preview"
+                    preload
+                    placeholder="blur"
+                    sizes="(min-width: 1280px) 1024px, (min-width: 1024px) 896px, 100vw"
+                    className="w-full h-full object-cover rounded-lg"
+                />
             </div>
         </section>
     );

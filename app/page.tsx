@@ -2,7 +2,7 @@ import CapabilitiesSection from "@/components/sections/CapabilitiesSection";
 import HeroSection from "@/components/sections/HeroSection";
 import Models from "@/components/sections/Models";
 import PreviewSection from "@/components/sections/PreviewSection";
-import Image from "next/image";
+import WhyEchoGPT from "@/components/sections/WhyEchoGPT";
 
 export default function Home() {
   return (
@@ -11,6 +11,7 @@ export default function Home() {
       <CapabilitiesSection/>
       <Models/>
       <PreviewSection/>
+      <WhyEchoGPT/>
     </div>
   );
 }

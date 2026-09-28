@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, type Variants } from "framer-motion";
+import { LazyMotion, domAnimation, m, type Variants } from "framer-motion";
 import { models } from "@/data/models";
 
 const containerVariants: Variants = {
@@ -29,10 +29,11 @@ const itemVariants: Variants = {
 
 export default function Models() {
   return (
+    <LazyMotion features={domAnimation}>
     <section className="w-full px-6 py-20 bg-ink/5">
       <div className="mx-auto max-w-6xl">
 
-        <motion.div
+        <m.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: false, amount: 0.3 }}
@@ -45,9 +46,9 @@ export default function Models() {
           <p className="mt-3 text-sm text-muted">
             We continuously integrate the latest releases so your workflow never gets locked in.
           </p>
-        </motion.div>
+        </m.div>
 
-        <motion.div
+        <m.div
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
@@ -59,7 +60,7 @@ export default function Models() {
             const isAvailable = model.status === "available";
 
             return (
-              <motion.div
+              <m.div
                 key={model.name}
                 variants={itemVariants}
                 whileHover={{
@@ -101,12 +102,13 @@ export default function Models() {
                     {isAvailable ? "Available" : "Coming Soon"}
                   </span>
                 </div>
-              </motion.div>
+              </m.div>
             );
           })}
-        </motion.div>
+        </m.div>
 
       </div>
     </section>
+    </LazyMotion>
   );
 }
