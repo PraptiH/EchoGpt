@@ -7,7 +7,7 @@ export default function Navbar() {
     <div className="flex items-center justify-around border-b border-line bg-white py-3">
       <div className="flex items-center gap-2">
         <Image src={logo} alt="Logo" width={40} height={40} />
-        <p className="font-semibold text-ink">EchoGpt</p>
+        <p className="font-semibold text-ink">EchoGPT</p>
       </div>
 
       <div className="flex items-center gap-6 text-muted">
