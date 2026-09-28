@@ -3,7 +3,7 @@ import heroDark from "@/public/assets/images/hero-dark.png"
 
 export default function HeroSection() {
     return (
-        <section className="relative flex h-screen w-full flex-col items-center bg-linear py-10">
+        <section className="relative flex w-full flex-col items-center bg-linear py-15">
             <h1 className="text-xs font-bold bg-surface text-primary border border-primary inline-flex items-center justify-center rounded-full px-4 py-2">ECHOGPT FOR DESKTOP & WEB</h1>
 
             <div className="text-center my-5 space-y-3">
