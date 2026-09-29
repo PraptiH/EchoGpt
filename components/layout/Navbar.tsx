@@ -10,7 +10,7 @@ export default function Navbar() {
         <p className="font-semibold text-ink">EchoGPT</p>
       </div>
 
-      <div className="flex items-center gap-6 text-muted">
+      <div className="flex items-center gap-6 text-muted-foreground">
         <Link href="/" className="hover:text-ink">Home</Link>
         <Link href="/Features" className="hover:text-ink">Features</Link>
         <Link href="/model" className="hover:text-ink">Models</Link>

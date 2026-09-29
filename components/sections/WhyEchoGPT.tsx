@@ -10,7 +10,7 @@ export default function WhyEchoGPT() {
           <h2 className="max-w-md text-3xl font-bold tracking-tight text-ink md:text-4xl">
             Built for professional workflows and developers
           </h2>
-          <p className="mt-4 max-w-md text-sm leading-relaxed text-muted">
+          <p className="mt-4 max-w-md text-sm leading-relaxed text-muted-foreground">
             We treat conversation as an engineering workspace. No gimmicks, just pure control over
             your intelligence stack, latency optimizations, and secure data handling.
           </p>
@@ -36,7 +36,7 @@ export default function WhyEchoGPT() {
                 className="text-3xl font-bold tracking-tight text-primary"
               />
               <h3 className="mt-3 text-sm font-bold text-ink">{stat.title}</h3>
-              <p className="mt-1 text-xs leading-relaxed text-muted">{stat.description}</p>
+              <p className="mt-1 text-xs leading-relaxed text-muted-foreground">{stat.description}</p>
             </div>
           ))}
         </div>

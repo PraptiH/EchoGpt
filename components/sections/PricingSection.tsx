@@ -3,13 +3,13 @@ import { plans } from "@/data/pricing";
 
 export default function PricingSection() {
     return (
-        <section className="bg-surface/5 w-full px-6 py-20">
+        <section className="bg-secondary w-full px-6 py-15">
         <div className="mx-auto max-w-6xl sm:px-6 md:px-10 lg:px-16 xl:px-30 py-12 lg:py-15 xl:py-20">
             
             <div className="text-center space-y-4">
                 <p className="font-semibold text-xs sm:text-sm tracking-[0.2em] text-blue-600">PRICING</p>
                 <h2 className="text-3xl font-bold text-ink md:text-4xl">Simple, transparent plans</h2>
-                <p className="text-sm leading-relaxed text-muted">No hidden fees. Flexible pricing. Try any plan free for 3 days.</p>
+                <p className="text-sm leading-relaxed text-muted-foreground">No hidden fees. Flexible pricing. Try any plan free for 3 days.</p>
             </div>
 
                 <div className="grid items-stretch gap-5 md:grid-cols-3 py-5">
@@ -27,11 +27,11 @@ export default function PricingSection() {
                             )}
 
                             <h3 className="text-base font-bold text-ink">{plan.name}</h3>
-                            <p className="mt-3 text-sm text-muted">{plan.description}</p>
+                            <p className="mt-3 text-sm text-muted-foreground">{plan.description}</p>
 
                             <div className="mt-4 flex items-baseline gap-1.5">
                                 <span className="text-4xl font-bold tracking-tight text-ink">{plan.price}</span>
-                                <span className="text-xs text-muted">{plan.period}</span>
+                                <span className="text-xs text-muted-foreground">{plan.period}</span>
                             </div>
 
                             <div className="my-6 h-px w-full bg-line" />

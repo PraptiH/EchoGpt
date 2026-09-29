@@ -43,7 +43,7 @@ export default function Models() {
             Access All Leading Foundation Models
           </h2>
 
-          <p className="mt-3 text-sm text-muted">
+          <p className="mt-3 text-sm text-muted-foreground">
             We continuously integrate the latest releases so your workflow never gets locked in.
           </p>
         </m.div>
@@ -82,13 +82,13 @@ export default function Models() {
                   />
                   <div>
                     <p className="text-sm font-bold leading-tight text-ink">{model.name}</p>
-                    <p className="text-xs text-muted">{model.provider}</p>
+                    <p className="text-xs text-muted-foreground">{model.provider}</p>
                   </div>
                 </div>
 
                 <div className="flex items-center gap-2">
                   {model.badge && (
-                    <span className="rounded-md bg-surface px-2 py-1 text-[11px] font-medium text-muted">
+                    <span className="rounded-md bg-surface px-2 py-1 text-[11px] font-medium text-muted-foreground">
                       {model.badge}
                     </span>
                   )}
@@ -96,7 +96,7 @@ export default function Models() {
                     className={`rounded-md px-2 py-1 text-[10px] font-bold uppercase tracking-wide ${
                       isAvailable
                         ? "bg-green-50 text-green-700"
-                        : "bg-surface text-muted"
+                        : "bg-surface text-muted-foreground"
                     }`}
                   >
                     {isAvailable ? "Available" : "Coming Soon"}

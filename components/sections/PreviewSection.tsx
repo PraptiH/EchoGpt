@@ -38,7 +38,7 @@ export default function PreviewSection() {
                     <h2 className="text-3xl font-bold tracking-tight text-ink md:text-4xl">
                         Interactive AI Workspace
                     </h2>
-                    <p className="text-sm leading-relaxed text-muted md:text-base">
+                    <p className="text-sm leading-relaxed text-muted-foreground md:text-base">
                         Explore the EchoGPT workspace built for seamless conversations, model switching, and AI-powered productivity.
                     </p>
                 </m.div>

@@ -8,7 +8,7 @@ export default function HeroSection() {
 
             <div className="text-center my-5 space-y-3">
                 <h1 className="text-4xl font-bold">Your AI, Your Way</h1>
-                <p className="text-md text-muted font-base"> A single intelligent hub. Switch between GPT-4o, Claude 3.5, and Gemini instantly. <br />
+                <p className="text-md text-muted-foreground font-base"> A single intelligent hub. Switch between GPT-4o, Claude 3.5, and Gemini instantly. <br />
                     Customize custom personas, automate repetitive tasks, and chat without boundaries.</p>
             </div>
 
