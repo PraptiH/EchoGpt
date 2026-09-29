@@ -10,7 +10,7 @@ const firstOpen = [faqs[0].value]
 
 export default function FaqSection() {
     return (
-        <section className="w-full bg-linear px-6 py-20">
+        <section id="faq" className="w-full bg-linear px-6 py-16 md:py-20">
             <div className="mx-auto max-w-6xl">
                 <div className="mb-10 space-y-3 text-center">
                     <h2 className="text-3xl font-bold tracking-tight text-ink md:text-4xl">

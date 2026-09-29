@@ -3,8 +3,8 @@ import { plans } from "@/data/pricing";
 
 export default function PricingSection() {
     return (
-        <section className="bg-secondary w-full px-6 py-15">
-        <div className="mx-auto max-w-6xl sm:px-6 md:px-10 lg:px-16 xl:px-30 py-12 lg:py-15 xl:py-20">
+        <section id="pricing" className="bg-secondary w-full px-6 py-12 md:py-15">
+        <div className="mx-auto max-w-6xl lg:px-16 xl:px-30 py-4 md:py-12 lg:py-15 xl:py-20">
             
             <div className="text-center space-y-4">
                 <p className="font-semibold text-xs sm:text-sm tracking-[0.2em] text-blue-600">PRICING</p>
@@ -12,7 +12,7 @@ export default function PricingSection() {
                 <p className="text-sm leading-relaxed text-muted-foreground">No hidden fees. Flexible pricing. Try any plan free for 3 days.</p>
             </div>
 
-                <div className="grid items-stretch gap-5 md:grid-cols-3 py-5">
+                <div className="mx-auto grid max-w-md items-stretch gap-5 py-5 lg:max-w-none lg:grid-cols-3">
                     {plans.map((plan) => (
                         <div
                             key={plan.name}

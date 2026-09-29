@@ -3,7 +3,7 @@ import { testimonials } from "@/data/testimonials";
 
 export default function TestimonialSection() {
     return (
-        <section className="w-full bg-ink/5 px-6 py-20">
+        <section className="w-full bg-ink/5 px-6 py-16 md:py-20">
             <div className="mx-auto max-w-6xl">
                 <div className="mx-auto mb-12 max-w-xl space-y-3 text-center">
                     <h2 className="text-3xl font-bold tracking-tight text-ink md:text-4xl">

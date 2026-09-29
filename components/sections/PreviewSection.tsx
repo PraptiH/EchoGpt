@@ -22,7 +22,7 @@ const angleStep = 360 / panels.length;
 export default function PreviewSection() {
     return (
         <LazyMotion features={domAnimation}>
-        <section className="relative w-full overflow-hidden bg-line px-6 py-20">
+        <section className="relative w-full overflow-hidden bg-line px-6 py-16 md:py-20">
             <div aria-hidden className="pointer-events-none absolute left-1/2 top-1/2 h-96 w-[48rem] -translate-x-1/2 
             -translate-y-1/2 rounded-full bg-primary/30 blur-3xl"
             />
@@ -48,7 +48,7 @@ export default function PreviewSection() {
                     whileInView={{ opacity: 1, scale: 1 }}
                     viewport={{ once: true, amount: 0.2 }}
                     transition={{ duration: 2, ease: "easeOut" }}
-                    className="group relative flex h-[300px] items-start justify-center pt-8 [--panel-w:260px] [--ring-radius:calc(var(--panel-w)*1.05)] [perspective:1400px] md:h-[480px] md:pt-12 md:[--panel-w:480px]"
+                    className="group relative flex h-[260px] items-start justify-center pt-8 [--panel-w:220px] [--ring-radius:calc(var(--panel-w)*1.05)] [perspective:1400px] sm:h-[320px] sm:[--panel-w:280px] md:h-[400px] md:pt-12 md:[--panel-w:380px] lg:h-[480px] lg:[--panel-w:480px]"
                 >
                     <div className="relative aspect-[16/10] w-[var(--panel-w)] animate-spin-ring [transform-style:preserve-3d] group-hover:[animation-play-state:paused] motion-reduce:animate-none">
                         {panels.map((image, index) => (
@@ -68,7 +68,7 @@ export default function PreviewSection() {
                                     alt="EchoGPT sidebar"
                                     width={1024}
                                     height={640}
-                                    sizes="(min-width: 768px) 480px, 260px"
+                                    sizes="(min-width: 1024px) 480px, (min-width: 768px) 380px, 280px"
                                     className="h-full w-full object-cover"
                                 />
                             </figure>

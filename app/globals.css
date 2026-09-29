@@ -31,7 +31,7 @@ body {
   color: var(--color-ink);
 }
 
-/* shadcn components carry data-slot and bring their own button styles. */
+
 @layer base {
   button:not([data-slot]) {
     cursor: pointer;

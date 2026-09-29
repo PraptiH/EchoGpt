@@ -4,9 +4,9 @@ import { highlights, stats } from "@/data/whyEchoGPT";
 
 export default function WhyEchoGPT() {
   return (
-    <section className="w-full bg-linear px-6 py-20">
-      <div className="mx-auto grid items-start max-w-6xl gap-12 lg:grid-cols-2">
-        <div className="py-5">
+    <section className="w-full bg-linear px-6 py-16 md:py-20">
+      <div className="mx-auto grid items-start max-w-6xl gap-8 lg:grid-cols-2 lg:gap-12">
+        <div className="lg:py-5">
           <h2 className="max-w-md text-3xl font-bold tracking-tight text-ink md:text-4xl">
             Built for professional workflows and developers
           </h2>
@@ -25,7 +25,7 @@ export default function WhyEchoGPT() {
           </ul>
         </div>
 
-        <div className="grid gap-4 sm:grid-cols-2 md:mt-20">
+        <div className="grid gap-4 sm:grid-cols-2 lg:mt-20">
           {stats.map((stat) => (
             <div
               key={stat.title}

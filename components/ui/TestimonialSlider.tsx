@@ -10,6 +10,7 @@ import type { Testimonial } from "@/data/testimonials";
 const GLIDE_MS = 6000;
 const STEP_MS = 450;
 const GAP_PX = 24;
+const MIN_STEP_RATIO = 0.2;
 
 const avatarColors = [
   "bg-indigo-100 text-indigo-700",
@@ -96,30 +97,38 @@ export default function TestimonialSlider({ testimonials }: TestimonialSliderPro
 
     freeze(swiper);
 
+    const size = slideSize(swiper);
+    const nearestIndex = direction === "next" ? swiper.activeIndex : swiper.activeIndex - 1;
+    const distance = nearestIndex < 0 ? 0 : distanceTo(swiper, nearestIndex);
+
+    if (distance >= size * MIN_STEP_RATIO) {
+      afterTransition(() => startGliding(swiper));
+      swiper.slideTo(nearestIndex, Math.round((STEP_MS * distance) / size));
+      return;
+    }
+
     const move = () => {
       afterTransition(() => startGliding(swiper));
       if (direction === "next") swiper.slideNext(STEP_MS);
       else swiper.slidePrev(STEP_MS);
     };
 
-    const settleIndex = direction === "next" ? swiper.activeIndex : swiper.activeIndex - 1;
-    const remaining = distanceTo(swiper, settleIndex);
-    if (remaining < 1 || settleIndex < 0) {
+    if (distance < 1) {
       move();
       return;
     }
 
     afterTransition(move);
-    swiper.slideTo(settleIndex, Math.round((STEP_MS * remaining) / slideSize(swiper)));
+    swiper.slideTo(nearestIndex, Math.round((STEP_MS * distance) / size));
   };
 
   return (
-    <div className="flex items-center gap-3 md:gap-4">
+    <div className="flex items-center gap-2 sm:gap-3 md:gap-4">
       <button
         type="button"
         onClick={() => step("prev")}
         aria-label="Previous testimonial"
-        className="flex size-10 shrink-0 items-center justify-center rounded-full border border-line bg-white p-0 text-ink shadow-sm"
+        className="flex size-8 shrink-0 items-center justify-center rounded-full border border-line bg-white p-0 text-ink shadow-sm sm:size-10"
       >
         <ChevronLeft className="size-4" />
       </button>
@@ -166,7 +175,7 @@ export default function TestimonialSlider({ testimonials }: TestimonialSliderPro
         >
           {testimonials.map((testimonial, index) => (
             <SwiperSlide key={testimonial.name} className="h-auto!">
-              <figure className="flex h-full flex-col rounded-xl border border-line/70 bg-white p-7 shadow-sm">
+              <figure className="flex h-full flex-col rounded-xl border border-line/70 bg-white p-5 shadow-sm sm:p-7">
                 <Quote className="size-4 fill-primary text-primary" aria-hidden />
 
                 <blockquote className="mt-5 text-sm leading-relaxed text-muted-foreground">
@@ -197,7 +206,7 @@ export default function TestimonialSlider({ testimonials }: TestimonialSliderPro
         type="button"
         onClick={() => step("next")}
         aria-label="Next testimonial"
-        className="flex size-10 shrink-0 items-center justify-center rounded-full border border-line bg-white p-0 text-ink shadow-sm"
+        className="flex size-8 shrink-0 items-center justify-center rounded-full border border-line bg-white p-0 text-ink shadow-sm sm:size-10"
       >
         <ChevronRight className="size-4" />
       </button>

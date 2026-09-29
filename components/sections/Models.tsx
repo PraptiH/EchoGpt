@@ -30,7 +30,7 @@ const itemVariants: Variants = {
 export default function Models() {
   return (
     <LazyMotion features={domAnimation}>
-    <section className="w-full px-6 py-20 bg-ink/5">
+    <section id="models" className="w-full px-6 py-16 md:py-20 bg-ink/5">
       <div className="mx-auto max-w-6xl">
 
         <m.div
