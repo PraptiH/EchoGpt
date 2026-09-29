@@ -4,7 +4,7 @@ import { highlights, stats } from "@/data/whyEchoGPT";
 
 export default function WhyEchoGPT() {
   return (
-    <section className="w-full bg-linear px-6 py-16 md:py-20">
+    <section id="why-echogpt" className="w-full bg-linear px-6 py-16 md:py-20">
       <div className="mx-auto grid items-start max-w-6xl gap-8 lg:grid-cols-2 lg:gap-12">
         <div className="lg:py-5">
           <h2 className="max-w-md text-3xl font-bold tracking-tight text-ink md:text-4xl">

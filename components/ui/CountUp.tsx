@@ -51,13 +51,13 @@ export default function CountUp({ value, className }: CountUpProps) {
 
     const observer = new IntersectionObserver(
       ([entry]) => {
-        const isBelowViewport = entry.boundingClientRect.top > 0;
-
-        if (entry.isIntersecting && isBelowViewport) {
+        if (entry.isIntersecting) {
+          observer.disconnect();
           countUp();
-        } else if (!entry.isIntersecting && isBelowViewport) {
-          cancelAnimationFrame(frame);
+        } else if (entry.boundingClientRect.top > 0) {
           setCurrent(0);
+        } else {
+          observer.disconnect();
         }
       },
       { threshold: 0.6 },

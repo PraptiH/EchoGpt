@@ -1,5 +1,9 @@
 import { CircleCheck } from "lucide-react";
+import Link from "next/link";
+import { buttonVariants } from "@/components/ui/button";
 import { plans } from "@/data/pricing";
+import { isExternalHref } from "@/data/site";
+import { cn } from "@/lib/utils";
 
 export default function PricingSection() {
     return (
@@ -13,49 +17,53 @@ export default function PricingSection() {
             </div>
 
                 <div className="mx-auto grid max-w-md items-stretch gap-5 py-5 lg:max-w-none lg:grid-cols-3">
-                    {plans.map((plan) => (
-                        <div
-                            key={plan.name}
-                            className={`relative flex flex-col rounded-xl border bg-card p-6 shadow-sm transition-shadow hover:shadow-md ${
-                                plan.recommended ? "border-primary" : "border-line/70"
-                            }`}
-                        >
-                            {plan.recommended && (
-                                <span className="absolute right-5 top-5 rounded-full bg-primary px-2.5 py-1 text-[10px] font-bold uppercase tracking-wide text-white">
-                                    Recommended
-                                </span>
-                            )}
+                    {plans.map((plan) => {
+                        const CtaLink = isExternalHref(plan.href) ? "a" : Link;
 
-                            <h3 className="text-base font-bold text-ink">{plan.name}</h3>
-                            <p className="mt-3 text-sm text-muted-foreground">{plan.description}</p>
-
-                            <div className="mt-4 flex items-baseline gap-1.5">
-                                <span className="text-4xl font-bold tracking-tight text-ink">{plan.price}</span>
-                                <span className="text-xs text-muted-foreground">{plan.period}</span>
-                            </div>
-
-                            <div className="my-6 h-px w-full bg-line" />
-
-                            <ul className="mb-8 space-y-3">
-                                {plan.features.map((feature) => (
-                                    <li key={feature} className="flex items-center gap-2.5 text-sm text-ink">
-                                        <CircleCheck className="size-4 shrink-0 text-primary" />
-                                        {feature}
-                                    </li>
-                                ))}
-                            </ul>
-
-                            <button
-                                className={`mt-auto w-full ${
-                                    plan.recommended
-                                        ? "bg-primary text-white"
-                                        : "bg-surface text-ink"
+                        return (
+                            <div
+                                key={plan.name}
+                                className={`relative flex flex-col rounded-xl border bg-card p-6 shadow-sm transition-shadow hover:shadow-md ${
+                                    plan.recommended ? "border-primary" : "border-line/70"
                                 }`}
                             >
-                                {plan.cta}
-                            </button>
-                        </div>
-                    ))}
+                                {plan.recommended && (
+                                    <span className="absolute right-5 top-5 rounded-full bg-primary px-2.5 py-1 text-[10px] font-bold uppercase tracking-wide text-white">
+                                        Recommended
+                                    </span>
+                                )}
+
+                                <h3 className="text-base font-bold text-ink">{plan.name}</h3>
+                                <p className="mt-3 text-sm text-muted-foreground">{plan.description}</p>
+
+                                <div className="mt-4 flex items-baseline gap-1.5">
+                                    <span className="text-4xl font-bold tracking-tight text-ink">{plan.price}</span>
+                                    <span className="text-xs text-muted-foreground">{plan.period}</span>
+                                </div>
+
+                                <div className="my-6 h-px w-full bg-line" />
+
+                                <ul className="mb-8 space-y-3">
+                                    {plan.features.map((feature) => (
+                                        <li key={feature} className="flex items-center gap-2.5 text-sm text-ink">
+                                            <CircleCheck className="size-4 shrink-0 text-primary" />
+                                            {feature}
+                                        </li>
+                                    ))}
+                                </ul>
+
+                                <CtaLink
+                                    href={plan.href}
+                                    className={cn(
+                                        buttonVariants({ variant: plan.recommended ? "primary" : "outline" }),
+                                        "mt-auto w-full",
+                                    )}
+                                >
+                                    {plan.cta}
+                                </CtaLink>
+                            </div>
+                        );
+                    })}
                 </div>
             </div>
         </section>

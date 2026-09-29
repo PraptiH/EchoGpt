@@ -128,7 +128,7 @@ export default function TestimonialSlider({ testimonials }: TestimonialSliderPro
         type="button"
         onClick={() => step("prev")}
         aria-label="Previous testimonial"
-        className="flex size-8 shrink-0 items-center justify-center rounded-full border border-line bg-card p-0 text-ink shadow-sm sm:size-10"
+        className="flex size-8 shrink-0 items-center justify-center rounded-full border border-line bg-card p-0 text-ink shadow-sm transition-[background-color,box-shadow,scale] hover:bg-surface hover:shadow-md active:scale-95 focus-visible:ring-3 focus-visible:ring-ring/50 outline-none sm:size-10"
       >
         <ChevronLeft className="size-4" />
       </button>
@@ -206,7 +206,7 @@ export default function TestimonialSlider({ testimonials }: TestimonialSliderPro
         type="button"
         onClick={() => step("next")}
         aria-label="Next testimonial"
-        className="flex size-8 shrink-0 items-center justify-center rounded-full border border-line bg-card p-0 text-ink shadow-sm sm:size-10"
+        className="flex size-8 shrink-0 items-center justify-center rounded-full border border-line bg-card p-0 text-ink shadow-sm transition-[background-color,box-shadow,scale] hover:bg-surface hover:shadow-md active:scale-95 focus-visible:ring-3 focus-visible:ring-ring/50 outline-none sm:size-10"
       >
         <ChevronRight className="size-4" />
       </button>

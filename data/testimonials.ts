@@ -9,7 +9,7 @@ export const testimonials: Testimonial[] = [
     name: "Sarah Jenkins",
     role: "Senior Staff Engineer, Linear Systems",
     quote:
-      "EchoGPT completely changed my engineering workflow. Being able to run the same prompt side-by-side through Claude and GPT-4o saved me hours of code review.",
+      "EchoGPT completely changed my engineering workflow. Being able to run the same prompt side-by-side through Claude and GPT saved me hours of code review.",
   },
   {
     name: "Marcus Thorne",
@@ -27,7 +27,7 @@ export const testimonials: Testimonial[] = [
     name: "Priya Raman",
     role: "Head of Data Science, Northwind AI",
     quote:
-      "Switching models mid-thread is a game changer. I prototype with Llama, then validate edge cases with Claude without losing any context.",
+      "Switching models mid-thread is a game changer. I prototype with DeepSeek, then validate edge cases with Claude without losing any context.",
   },
   {
     name: "Daniel Okafor",

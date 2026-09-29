@@ -1,52 +1,46 @@
-import { CircleIcon, type LucideIcon } from "lucide-react";
-
 export interface AIModel {
   name: string;
   provider: string;
-  icon: LucideIcon;
-  iconColor: string;
+  logo: string;
+  monochromeLogo?: boolean;
   badge?: string;
   status: "available" | "coming-soon";
 }
 
 export const models: AIModel[] = [
   {
-    name: "GPT-4o",
+    name: "GPT-6 Astra",
     provider: "OpenAI",
-    icon: CircleIcon,
-    iconColor: "#10A37F",
-    badge: "Best for Logic",
+    logo: "/assets/icons/models/openai.svg",
+    monochromeLogo: true,
+    badge: "Best for Reasoning",
     status: "available",
   },
   {
-    name: "Claude 3.5 Sonnet",
+    name: "Claude Opus 5.5",
     provider: "Anthropic",
-    icon: CircleIcon,
-    iconColor: "#D97706",
-    badge: "Best for Writing",
+    logo: "/assets/icons/models/claude.svg",
+    badge: "Best for Coding & Writing",
     status: "available",
   },
   {
-    name: "Gemini 1.5 Pro",
+    name: "Gemini 3.8 Flash",
     provider: "Google",
-    icon: CircleIcon,
-    iconColor: "#4285F4",
+    logo: "/assets/icons/models/gemini.svg",
     badge: "Best for Multi-modal",
+    status: "available",
+  },
+  {
+    name: "DeepSeek V4 Pro",
+    provider: "DeepSeek",
+    logo: "/assets/icons/models/deepseek.svg",
+    badge: "Best Open Weights",
     status: "coming-soon",
   },
   {
-    name: "Llama 3.1",
-    provider: "Meta",
-    icon: CircleIcon,
-    iconColor: "#059669",
-    badge: "Best Open Source",
-    status: "coming-soon",
-  },
-  {
-    name: "Mistral Large",
+    name: "Mistral Large 3",
     provider: "Mistral AI",
-    icon: CircleIcon,
-    iconColor: "#7C3AED",
+    logo: "/assets/icons/models/mistral.svg",
     badge: "Best Speed-to-Cost",
     status: "coming-soon",
   },

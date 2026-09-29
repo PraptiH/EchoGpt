@@ -1,3 +1,5 @@
+import { siteConfig } from "@/data/site";
+
 export interface PricingPlan {
   name: string;
   description: string;
@@ -5,6 +7,7 @@ export interface PricingPlan {
   period: string;
   features: string[];
   cta: string;
+  href: string;
   recommended?: boolean;
 }
 
@@ -16,11 +19,12 @@ export const plans: PricingPlan[] = [
     period: "/ forever",
     features: [
       "50 messages per day",
-      "Access to standard GPT-4o mini",
+      "Access to GPT-6 Luna",
       "Web interface access",
       "Basic thread history (3 days)",
     ],
     cta: "Get Started",
+    href: "/#get-started",
   },
   {
     name: "Pro",
@@ -34,6 +38,7 @@ export const plans: PricingPlan[] = [
       "Advanced file & document analysis",
     ],
     cta: "Upgrade to Pro",
+    href: "/#get-started",
     recommended: true,
   },
   {
@@ -48,5 +53,6 @@ export const plans: PricingPlan[] = [
       "API access with custom rate limits",
     ],
     cta: "Contact Sales",
+    href: siteConfig.links.sales,
   },
 ];

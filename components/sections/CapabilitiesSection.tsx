@@ -16,12 +16,12 @@ export default function CapabilitiesSection() {
                             return (
                                 <div
                                     key={capability.title}
-                                    className="rounded-xl border border-line/70 bg-card p-5 shadow-sm transition-shadow hover:shadow-md cursor-pointer"
+                                    className="rounded-xl border border-line/70 bg-card p-5 shadow-sm transition-shadow hover:shadow-md"
                                 >
                                     <div className="mb-4 flex size-9 items-center justify-center rounded-lg bg-primary/10">
                                         <Icon className="size-4 text-primary" strokeWidth={2} />
                                     </div>
-                                    <h4 className="mb-2 text-base font-bold text-ink">{capability.title}</h4>
+                                    <h3 className="mb-2 text-base font-bold text-ink">{capability.title}</h3>
                                     <p className="text-sm leading-relaxed text-muted-foreground">{capability.description}</p>
                                 </div>
                             )

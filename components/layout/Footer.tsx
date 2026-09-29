@@ -1,14 +1,15 @@
 import { MessageCircle } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import type { SVGProps } from "react";
+import type { ReactNode, SVGProps } from "react";
 import { footerColumns } from "@/data/footer";
+import { isExternalHref, siteConfig } from "@/data/site";
 import logo from "@/public/assets/images/logo.png";
 
-function TwitterIcon(props: SVGProps<SVGSVGElement>) {
+function XIcon(props: SVGProps<SVGSVGElement>) {
     return (
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" {...props}>
-            <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z" />
+        <svg viewBox="0 0 24 24" fill="currentColor" {...props}>
+            <path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z" />
         </svg>
     );
 }
@@ -23,10 +24,32 @@ function GithubIcon(props: SVGProps<SVGSVGElement>) {
 }
 
 const socials = [
-    { label: "Twitter", href: "#", Icon: TwitterIcon },
-    { label: "GitHub", href: "#", Icon: GithubIcon },
-    { label: "Community chat", href: "#", Icon: MessageCircle },
+    { label: "EchoGPT on X", href: siteConfig.social.x, Icon: XIcon },
+    { label: "EchoGPT on GitHub", href: siteConfig.social.github, Icon: GithubIcon },
+    { label: "EchoGPT community", href: siteConfig.social.community, Icon: MessageCircle },
 ];
+
+function FooterLink({ href, className, children, ...props }: { href: string; className: string; children: ReactNode; "aria-label"?: string }) {
+    if (isExternalHref(href)) {
+        const newTab = href.startsWith("http");
+        return (
+            <a
+                href={href}
+                className={className}
+                {...(newTab && { target: "_blank", rel: "noopener noreferrer" })}
+                {...props}
+            >
+                {children}
+            </a>
+        );
+    }
+
+    return (
+        <Link href={href} className={className} {...props}>
+            {children}
+        </Link>
+    );
+}
 
 export default function Footer() {
     return (
@@ -34,12 +57,12 @@ export default function Footer() {
             <div className="mx-auto max-w-6xl">
                 <div className="grid gap-10 py-12 md:py-14 lg:grid-cols-[1fr_auto] lg:gap-16">
                     <div className="max-w-xs">
-                        <Link href="/" className="flex items-center gap-2">
+                        <Link href="/#home" className="flex items-center gap-2">
                             <Image src={logo} alt="" width={28} height={28} className="rounded-md" />
                             <span className="text-base font-bold text-ink">EchoGPT</span>
                         </Link>
                         <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
-                            The intelligent conversation hub that brings GPT-4o, Claude 3.5, and Gemini under one
+                            The intelligent conversation hub that brings GPT, Claude, and Gemini under one
                             streamlined private workflow.
                         </p>
                     </div>
@@ -53,12 +76,12 @@ export default function Footer() {
                                 <ul className="mt-4 space-y-3">
                                     {column.links.map((link) => (
                                         <li key={link.label}>
-                                            <Link
+                                            <FooterLink
                                                 href={link.href}
                                                 className="text-sm text-muted-foreground transition-colors hover:text-primary"
                                             >
                                                 {link.label}
-                                            </Link>
+                                            </FooterLink>
                                         </li>
                                     ))}
                                 </ul>
@@ -73,14 +96,14 @@ export default function Footer() {
                     </p>
                     <div className="flex items-center gap-4">
                         {socials.map(({ label, href, Icon }) => (
-                            <Link
+                            <FooterLink
                                 key={label}
                                 href={href}
                                 aria-label={label}
                                 className="text-ink transition-colors hover:text-primary"
                             >
-                                <Icon className="size-4" />
-                            </Link>
+                                <Icon className="size-4" aria-hidden />
+                            </FooterLink>
                         ))}
                     </div>
                 </div>

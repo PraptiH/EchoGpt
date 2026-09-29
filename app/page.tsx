@@ -10,7 +10,7 @@ import WhyEchoGPT from "@/components/sections/WhyEchoGPT";
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center font-sans">
+    <main id="main" className="flex flex-1 flex-col items-center">
       <HeroSection/>
       <CapabilitiesSection/>
       <Models/>
@@ -20,6 +20,6 @@ export default function Home() {
       <FaqSection/>
       <TestimonialSection/>
       <CTASection/>
-    </div>
+    </main>
   );
 }

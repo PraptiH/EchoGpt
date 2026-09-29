@@ -11,7 +11,7 @@ import { MessageCircle, Layers3, ShieldCheck, Zap, UserRoundCog, Code2 } from "l
       icon: Layers3,
       title: "Multi-Model Support",
       description:
-        "Switch between GPT-4o, Claude 3.5, Gemini, and Llama 3 with a single click inside the active thread.",
+        "Switch between GPT-6, Claude Opus, Gemini, and DeepSeek with a single click inside the active thread.",
     },
     {
       icon: ShieldCheck,

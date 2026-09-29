@@ -15,7 +15,7 @@ export const faqs = [
     value: "models",
     question: "What premium models are currently included?",
     answer:
-      "We support the latest flagships: GPT-4o, Claude 3.5 Sonnet, Gemini 1.5 Pro, Llama 3.1 (70B/405B), and Mistral Large. New models are added within 24 hours of release.",
+      "We support the latest flagships: GPT-6 Astra, Claude Opus 5.5, and Gemini 3.8 Flash today, with DeepSeek V4 Pro and Mistral Large 3 coming soon. New models are added within 24 hours of release.",
   },
   {
     value: "personas",

@@ -4,7 +4,6 @@
 
 @custom-variant dark (&:where(.dark, .dark *));
 
-/* Non-inline tokens compile to var() references, so .dark below can redefine them. */
 @theme {
   --color-ink: #18181b;
   --color-line: #e4e4e7;
@@ -15,6 +14,33 @@
   --font-mono: var(--font-geist-mono), ui-monospace, monospace;
 
   --animate-spin-ring: spin-ring 40s linear infinite;
+  --animate-orbit: orbit 60s linear infinite;
+  --animate-orbit-reverse: orbit 60s linear infinite reverse;
+  --animate-dash-flow: dash-flow 0.8s linear infinite;
+  --animate-pulse-ring: pulse-ring 3s cubic-bezier(0, 0, 0.2, 1) infinite;
+
+  @keyframes orbit {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  @keyframes dash-flow {
+    to {
+      stroke-dashoffset: -4;
+    }
+  }
+
+  @keyframes pulse-ring {
+    from {
+      transform: scale(1);
+      opacity: 0.6;
+    }
+    to {
+      transform: scale(1.9);
+      opacity: 0;
+    }
+  }
 
   @keyframes spin-ring {
     from {
@@ -26,29 +52,10 @@
   }
 }
 
-body {
-  font-family: var(--font-sans);
-  background-color: var(--background);
-  color: var(--color-ink);
-}
-
-
 @layer base {
-  button:not([data-slot]) {
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
     cursor: pointer;
-    transition: all 0.3s ease;
-    border-radius: 0.5rem;
-    padding: 0.6rem 1rem;
-    font-size: 0.875rem;
-    font-weight: 500;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-  }
-
-  button:not([data-slot]):hover {
-    transform: scale(1.02);
-    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
   }
 }
 
