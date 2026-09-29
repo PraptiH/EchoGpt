@@ -1,4 +1,5 @@
 import CapabilitiesSection from "@/components/sections/CapabilitiesSection";
+import CTASection from "@/components/sections/CTASection";
 import FaqSection from "@/components/sections/FaqSection";
 import HeroSection from "@/components/sections/HeroSection";
 import Models from "@/components/sections/Models";
@@ -18,6 +19,7 @@ export default function Home() {
       <PricingSection/>
       <FaqSection/>
       <TestimonialSection/>
+      <CTASection/>
     </div>
   );
 }
