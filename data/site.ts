@@ -2,8 +2,6 @@ const vercelUrl = process.env.VERCEL_PROJECT_PRODUCTION_URL;
 const siteUrl =
   process.env.NEXT_PUBLIC_SITE_URL ||
   (vercelUrl ? `https://${vercelUrl}` : process.env.NODE_ENV === "production" ? "https://echogpt.ai" : "http://localhost:3000");
-const appUrl = process.env.NEXT_PUBLIC_APP_URL ?? "https://app.echogpt.ai";
-
 export const siteConfig = {
   name: "EchoGPT",
   url: siteUrl,
@@ -11,12 +9,7 @@ export const siteConfig = {
   description:
     "Chat, write, translate and research with GPT, Claude, Gemini and more from a single AI sidebar that works on every website and on your desktop.",
   links: {
-    webApp: appUrl,
-    docs: `${appUrl}/docs`,
-    status: `${appUrl}/status`,
     sales: "mailto:sales@echogpt.ai",
-    support: "mailto:support@echogpt.ai",
-    careers: "mailto:careers@echogpt.ai",
   },
 };
 

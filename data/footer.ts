@@ -1,8 +1,6 @@
-import { siteConfig } from "@/data/site";
-
 export interface FooterColumn {
   title: string;
-  links: { label: string; href: string }[];
+  links: { label: string; href?: string }[];
 }
 
 export const footerColumns: FooterColumn[] = [
@@ -21,17 +19,21 @@ export const footerColumns: FooterColumn[] = [
     links: [
       { label: "Why EchoGPT", href: "/#why-echogpt" },
       { label: "Customers", href: "/#testimonials" },
-      { label: "Careers", href: siteConfig.links.careers },
-      { label: "Contact Sales", href: siteConfig.links.sales },
+      { label: "Careers" },
+      { label: "Contact Sales" },
     ],
   },
   {
     title: "Resources",
     links: [
       { label: "FAQ", href: "/#faq" },
-      { label: "Documentation", href: siteConfig.links.docs },
-      { label: "Status Page", href: siteConfig.links.status },
-      { label: "Help Center", href: siteConfig.links.support },
+      { label: "Documentation" },
+      { label: "Status Page" },
+      { label: "Help Center" },
     ],
+  },
+  {
+    title: "Legal",
+    links: [{ label: "Privacy Policy" }, { label: "Terms of Service" }],
   },
 ];

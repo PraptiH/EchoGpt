@@ -1,9 +1,8 @@
 import { MessageCircle } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import type { ReactNode, SVGProps } from "react";
+import type { SVGProps } from "react";
 import { footerColumns } from "@/data/footer";
-import { isExternalHref } from "@/data/site";
 import logo from "@/public/assets/images/logo.png";
 
 function XIcon(props: SVGProps<SVGSVGElement>) {
@@ -25,27 +24,6 @@ function GithubIcon(props: SVGProps<SVGSVGElement>) {
 
 const socialIcons = [XIcon, GithubIcon, MessageCircle];
 
-function FooterLink({ href, className, children }: { href: string; className: string; children: ReactNode }) {
-    if (isExternalHref(href)) {
-        const newTab = href.startsWith("http");
-        return (
-            <a
-                href={href}
-                className={className}
-                {...(newTab && { target: "_blank", rel: "noopener noreferrer" })}
-            >
-                {children}
-            </a>
-        );
-    }
-
-    return (
-        <Link href={href} className={className}>
-            {children}
-        </Link>
-    );
-}
-
 export default function Footer() {
     return (
         <footer className="w-full border-t-2 border-primary/80 bg-background px-6">
@@ -62,7 +40,7 @@ export default function Footer() {
                         </p>
                     </div>
 
-                    <nav aria-label="Footer" className="grid grid-cols-2 gap-8 sm:grid-cols-3 lg:gap-12">
+                    <nav aria-label="Footer" className="grid grid-cols-2 gap-8 sm:grid-cols-4 lg:gap-12">
                         {footerColumns.map((column) => (
                             <div key={column.title}>
                                 <h3 className="text-xs font-bold uppercase tracking-wide text-ink">
@@ -71,12 +49,18 @@ export default function Footer() {
                                 <ul className="mt-4 space-y-3">
                                     {column.links.map((link) => (
                                         <li key={link.label}>
-                                            <FooterLink
-                                                href={link.href}
-                                                className="text-sm text-muted-foreground transition-colors hover:text-primary"
-                                            >
-                                                {link.label}
-                                            </FooterLink>
+                                            {link.href ? (
+                                                <Link
+                                                    href={link.href}
+                                                    className="text-sm text-muted-foreground transition-colors hover:text-primary"
+                                                >
+                                                    {link.label}
+                                                </Link>
+                                            ) : (
+                                                <span className="text-sm text-muted-foreground transition-colors hover:text-primary cursor-pointer">
+                                                    {link.label}
+                                                </span>
+                                            )}
                                         </li>
                                     ))}
                                 </ul>

@@ -21,7 +21,6 @@ Optional environment variables (see `.env.example`):
 | Variable | Purpose |
 | --- | --- |
 | `NEXT_PUBLIC_SITE_URL` | Public URL of the landing page, used for canonical URLs, Open Graph, `sitemap.xml` and `robots.txt`. Falls back to the Vercel production domain, then `https://echogpt.ai` in production builds |
-| `NEXT_PUBLIC_APP_URL` | Base URL of the EchoGPT app, used for docs and status links |
 | `WAITLIST_WEBHOOK_URL` | Endpoint that receives each sign-up as JSON (for example a CRM, Zapier or Make webhook). When unset, sign-ups are saved to `.data/waitlist.jsonl` |
 
 ## Page structure
@@ -38,7 +37,7 @@ Optional environment variables (see `.env.example`):
 | FAQ | `components/sections/FaqSection.tsx` | Accessible accordion (Base UI) |
 | Testimonials | `components/sections/TestimonialSection.tsx` | Continuous-glide Swiper slider with single-card arrow steps |
 | Call to Action | `components/sections/CTASection.tsx` | Email sign-up (Server Action) and install buttons for Chrome, Edge, Windows and macOS |
-| Footer | `components/layout/Footer.tsx` | Link columns and social icons |
+| Footer | `components/layout/Footer.tsx` | Link columns, legal notices and social icons |
 
 ## Architecture
 
