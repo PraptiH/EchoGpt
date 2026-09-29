@@ -18,24 +18,18 @@ export const siteConfig = {
     support: "mailto:support@echogpt.ai",
     careers: "mailto:careers@echogpt.ai",
   },
-  social: {
-    x: "https://x.com/echogpt",
-    github: "https://github.com/echogpt",
-    community: `${appUrl}/community`,
-  },
 };
 
 export interface DownloadTarget {
   label: string;
   platform: string;
-  href: string;
 }
 
 export const downloads: DownloadTarget[] = [
-  { label: "Add to Chrome", platform: "Chrome extension", href: `${appUrl}/download/chrome` },
-  { label: "Add to Edge", platform: "Edge add-on", href: `${appUrl}/download/edge` },
-  { label: "Windows", platform: "Desktop app", href: `${appUrl}/download/windows` },
-  { label: "macOS", platform: "Desktop app", href: `${appUrl}/download/macos` },
+  { label: "Add to Chrome", platform: "Chrome extension" },
+  { label: "Add to Edge", platform: "Edge add-on" },
+  { label: "Windows", platform: "Desktop app" },
+  { label: "macOS", platform: "Desktop app" },
 ];
 
 export const isExternalHref = (href: string) => /^(https?:|mailto:)/.test(href);

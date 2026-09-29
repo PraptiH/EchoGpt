@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import type { ReactNode, SVGProps } from "react";
 import { footerColumns } from "@/data/footer";
-import { isExternalHref, siteConfig } from "@/data/site";
+import { isExternalHref } from "@/data/site";
 import logo from "@/public/assets/images/logo.png";
 
 function XIcon(props: SVGProps<SVGSVGElement>) {
@@ -23,13 +23,9 @@ function GithubIcon(props: SVGProps<SVGSVGElement>) {
     );
 }
 
-const socials = [
-    { label: "EchoGPT on X", href: siteConfig.social.x, Icon: XIcon },
-    { label: "EchoGPT on GitHub", href: siteConfig.social.github, Icon: GithubIcon },
-    { label: "EchoGPT community", href: siteConfig.social.community, Icon: MessageCircle },
-];
+const socialIcons = [XIcon, GithubIcon, MessageCircle];
 
-function FooterLink({ href, className, children, ...props }: { href: string; className: string; children: ReactNode; "aria-label"?: string }) {
+function FooterLink({ href, className, children }: { href: string; className: string; children: ReactNode }) {
     if (isExternalHref(href)) {
         const newTab = href.startsWith("http");
         return (
@@ -37,7 +33,6 @@ function FooterLink({ href, className, children, ...props }: { href: string; cla
                 href={href}
                 className={className}
                 {...(newTab && { target: "_blank", rel: "noopener noreferrer" })}
-                {...props}
             >
                 {children}
             </a>
@@ -45,7 +40,7 @@ function FooterLink({ href, className, children, ...props }: { href: string; cla
     }
 
     return (
-        <Link href={href} className={className} {...props}>
+        <Link href={href} className={className}>
             {children}
         </Link>
     );
@@ -67,7 +62,7 @@ export default function Footer() {
                         </p>
                     </div>
 
-                    <nav aria-label="Footer" className="grid grid-cols-2 gap-8 sm:grid-cols-4 lg:gap-12">
+                    <nav aria-label="Footer" className="grid grid-cols-2 gap-8 sm:grid-cols-3 lg:gap-12">
                         {footerColumns.map((column) => (
                             <div key={column.title}>
                                 <h3 className="text-xs font-bold uppercase tracking-wide text-ink">
@@ -94,16 +89,9 @@ export default function Footer() {
                     <p className="text-xs text-muted-foreground">
                         © {new Date().getFullYear()} EchoGPT Labs Inc. All rights reserved.
                     </p>
-                    <div className="flex items-center gap-4">
-                        {socials.map(({ label, href, Icon }) => (
-                            <FooterLink
-                                key={label}
-                                href={href}
-                                aria-label={label}
-                                className="text-ink transition-colors hover:text-primary"
-                            >
-                                <Icon className="size-4" aria-hidden />
-                            </FooterLink>
+                    <div className="flex items-center gap-4 text-ink" aria-hidden>
+                        {socialIcons.map((Icon, index) => (
+                            <Icon key={index} className="size-4" />
                         ))}
                     </div>
                 </div>

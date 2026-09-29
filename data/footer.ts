@@ -34,11 +34,4 @@ export const footerColumns: FooterColumn[] = [
       { label: "Help Center", href: siteConfig.links.support },
     ],
   },
-  {
-    title: "Legal",
-    links: [
-      { label: "Privacy Policy", href: "/privacy" },
-      { label: "Terms of Service", href: "/terms" },
-    ],
-  },
 ];

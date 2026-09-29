@@ -21,7 +21,7 @@ Optional environment variables (see `.env.example`):
 | Variable | Purpose |
 | --- | --- |
 | `NEXT_PUBLIC_SITE_URL` | Public URL of the landing page, used for canonical URLs, Open Graph, `sitemap.xml` and `robots.txt`. Falls back to the Vercel production domain, then `https://echogpt.ai` in production builds |
-| `NEXT_PUBLIC_APP_URL` | Base URL of the EchoGPT app, used for downloads, docs and status links |
+| `NEXT_PUBLIC_APP_URL` | Base URL of the EchoGPT app, used for docs and status links |
 | `WAITLIST_WEBHOOK_URL` | Endpoint that receives each sign-up as JSON (for example a CRM, Zapier or Make webhook). When unset, sign-ups are saved to `.data/waitlist.jsonl` |
 
 ## Page structure
@@ -37,10 +37,8 @@ Optional environment variables (see `.env.example`):
 | Pricing | `components/sections/PricingSection.tsx` | Three plans, each with a working CTA |
 | FAQ | `components/sections/FaqSection.tsx` | Accessible accordion (Base UI) |
 | Testimonials | `components/sections/TestimonialSection.tsx` | Continuous-glide Swiper slider with single-card arrow steps |
-| Call to Action | `components/sections/CTASection.tsx` | Email sign-up (Server Action) and install links for Chrome, Edge, Windows and macOS |
-| Footer | `components/layout/Footer.tsx` | Link columns, socials, legal pages |
-
-`/privacy` and `/terms` share `components/layout/LegalPage.tsx`.
+| Call to Action | `components/sections/CTASection.tsx` | Email sign-up (Server Action) and install buttons for Chrome, Edge, Windows and macOS |
+| Footer | `components/layout/Footer.tsx` | Link columns and social icons |
 
 ## Architecture
 
@@ -49,10 +47,9 @@ app/
   layout.tsx        Root layout: fonts, metadata, theme script, skip link, navbar and footer
   page.tsx          Composes the landing page sections inside <main>
   actions.ts        Server Action for the CTA sign-up form (validates, then saves via lib/waitlist.ts)
-  privacy/, terms/  Legal pages
   robots.ts, sitemap.ts, icon.png
 components/
-  layout/           Navbar, Footer, LegalPage
+  layout/           Navbar, Footer
   sections/         One component per landing page section
   ui/               Reusable pieces: buttonVariants, Reveal, CountUp, ModelOrbit,
                     TestimonialSlider, SignupForm, ThemeToggle, accordion

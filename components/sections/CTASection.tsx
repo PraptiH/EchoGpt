@@ -24,8 +24,8 @@ export default function CTASection() {
                     <ul className="mt-4 grid grid-cols-2 gap-3 sm:grid-cols-4">
                         {downloads.map((target) => (
                             <li key={target.label}>
-                                <a
-                                    href={target.href}
+                                <button
+                                    type="button"
                                     className={cn(buttonVariants({ variant: "glass" }), "h-auto w-full flex-col gap-0.5 py-2.5")}
                                 >
                                     <span className="flex items-center gap-1.5 text-sm font-semibold">
@@ -33,7 +33,7 @@ export default function CTASection() {
                                         {target.label}
                                     </span>
                                     <span className="text-[11px] font-normal text-white/70">{target.platform}</span>
-                                </a>
+                                </button>
                             </li>
                         ))}
                     </ul>
