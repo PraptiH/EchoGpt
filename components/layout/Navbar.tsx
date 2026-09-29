@@ -5,6 +5,7 @@ import { Menu, X } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
+import ThemeToggle from "@/components/ui/ThemeToggle";
 
 const links = [
   { label: "Home", href: "/#home" },
@@ -18,7 +19,7 @@ export default function Navbar() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-line bg-white/90 backdrop-blur-md">
+    <header className="sticky top-0 z-50 border-b border-line bg-background/90 backdrop-blur-md dark:bg-black">
       <div className="flex items-center justify-between px-6 py-3 md:justify-around md:px-0">
         <div className="flex items-center gap-2">
           <Image src={logo} alt="Logo" width={40} height={40} />
@@ -31,25 +32,27 @@ export default function Navbar() {
           ))}
         </nav>
 
-        <div className="hidden items-center gap-4 md:flex">
-          <button className="px-4 py-2 text-ink hover:bg-surface">Sign In</button>
-          <button className="bg-primary text-white px-4 py-2">Get Started</button>
-        </div>
+        <div className="flex items-center gap-1 md:gap-4">
+          <button className="hidden px-4 py-2 text-ink hover:bg-surface md:inline-block">Sign In</button>
+          <button className="hidden bg-primary text-white px-4 py-2 md:inline-block">Get Started</button>
 
-        <button
-          type="button"
-          onClick={() => setOpen((value) => !value)}
-          aria-label={open ? "Close menu" : "Open menu"}
-          aria-expanded={open}
-          aria-controls="mobile-menu"
-          className="p-2 text-ink hover:bg-surface md:hidden"
-        >
-          {open ? <X className="size-5" /> : <Menu className="size-5" />}
-        </button>
+          <ThemeToggle />
+
+          <button
+            type="button"
+            onClick={() => setOpen((value) => !value)}
+            aria-label={open ? "Close menu" : "Open menu"}
+            aria-expanded={open}
+            aria-controls="mobile-menu"
+            className="p-2 text-ink hover:bg-surface md:hidden"
+          >
+            {open ? <X className="size-5" /> : <Menu className="size-5" />}
+          </button>
+        </div>
       </div>
 
       {open && (
-        <div id="mobile-menu" className="absolute inset-x-0 top-full z-50 border-b border-line bg-white px-6 pb-6 shadow-md md:hidden">
+        <div id="mobile-menu" className="absolute inset-x-0 top-full z-50 border-b border-line bg-background px-6 pb-6 shadow-md md:hidden dark:bg-black">
           <nav className="flex flex-col">
             {links.map((link) => (
               <Link

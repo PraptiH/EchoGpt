@@ -23,7 +23,7 @@ export default function FaqSection() {
 
                 <Accordion
                     defaultValue={firstOpen}
-                    className="mx-auto max-w-3xl rounded-xl border border-line/70 bg-white px-5 shadow-sm"
+                    className="mx-auto max-w-3xl rounded-xl border border-line/70 bg-card px-5 shadow-sm"
                 >
                     {faqs.map((faq) => (
                         <AccordionItem

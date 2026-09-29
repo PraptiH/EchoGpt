@@ -7,7 +7,7 @@ export default function PricingSection() {
         <div className="mx-auto max-w-6xl lg:px-16 xl:px-30 py-4 md:py-12 lg:py-15 xl:py-20">
             
             <div className="text-center space-y-4">
-                <p className="font-semibold text-xs sm:text-sm tracking-[0.2em] text-blue-600">PRICING</p>
+                <p className="font-semibold text-xs sm:text-sm tracking-[0.2em] text-blue-600 dark:text-blue-400">PRICING</p>
                 <h2 className="text-3xl font-bold text-ink md:text-4xl">Simple, transparent plans</h2>
                 <p className="text-sm leading-relaxed text-muted-foreground">No hidden fees. Flexible pricing. Try any plan free for 3 days.</p>
             </div>
@@ -16,7 +16,7 @@ export default function PricingSection() {
                     {plans.map((plan) => (
                         <div
                             key={plan.name}
-                            className={`relative flex flex-col rounded-xl border bg-white p-6 shadow-sm transition-shadow hover:shadow-md ${
+                            className={`relative flex flex-col rounded-xl border bg-card p-6 shadow-sm transition-shadow hover:shadow-md ${
                                 plan.recommended ? "border-primary" : "border-line/70"
                             }`}
                         >

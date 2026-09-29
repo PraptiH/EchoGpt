@@ -70,7 +70,7 @@ export default function Models() {
                 transition={{
                   duration: 0.2,
                 }}
-                className={`flex max-w-full flex-wrap items-center gap-x-4 gap-y-2 rounded-xl border bg-white px-4 py-3.5 shadow-sm ${
+                className={`flex max-w-full flex-wrap items-center gap-x-4 gap-y-2 rounded-xl border bg-card px-4 py-3.5 shadow-sm ${
                   isAvailable ? "border-primary" : "border-line/70"
                 }`}
               >
@@ -95,7 +95,7 @@ export default function Models() {
                   <span
                     className={`rounded-md px-2 py-1 text-[10px] font-bold uppercase tracking-wide ${
                       isAvailable
-                        ? "bg-green-50 text-green-700"
+                        ? "bg-green-50 text-green-700 dark:bg-green-500/15 dark:text-green-400"
                         : "bg-surface text-muted-foreground"
                     }`}
                   >

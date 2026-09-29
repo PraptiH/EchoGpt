@@ -29,7 +29,7 @@ export default function WhyEchoGPT() {
           {stats.map((stat) => (
             <div
               key={stat.title}
-              className="rounded-xl border border-line/70 bg-white p-5 shadow-sm transition-shadow hover:shadow-md"
+              className="rounded-xl border border-line/70 bg-card p-5 shadow-sm transition-shadow hover:shadow-md"
             >
               <CountUp
                 value={stat.value}

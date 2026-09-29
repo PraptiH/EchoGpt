@@ -1,5 +1,6 @@
 import Image from "next/image";
 import heroDark from "@/public/assets/images/hero-dark.png"
+import heroLight from "@/public/assets/images/hero-light.png"
 
 export default function HeroSection() {
     return (
@@ -14,17 +15,25 @@ export default function HeroSection() {
 
             <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-5 text-sm">
                 <button className="bg-primary text-white">Try EchoGPT Free</button>
-                <button className="bg-white border border-gray-200">Watch 2 Min Demo</button>
+                <button className="bg-card text-ink border border-line">Watch 2 Min Demo</button>
             </div>
 
             <div className="my-5 w-full lg:max-w-4xl xl:max-w-5xl">
                 <Image
                     src={heroDark}
                     alt="EchoGPT app preview"
-                    preload
+                    fetchPriority="high"
                     placeholder="blur"
                     sizes="(min-width: 1280px) 1024px, (min-width: 1024px) 896px, 100vw"
-                    className="w-full h-full object-cover rounded-lg"
+                    className="w-full h-full object-cover rounded-lg dark:hidden"
+                />
+                <Image
+                    src={heroLight}
+                    alt="EchoGPT app preview"
+                    fetchPriority="high"
+                    placeholder="blur"
+                    sizes="(min-width: 1280px) 1024px, (min-width: 1024px) 896px, 100vw"
+                    className="hidden w-full h-full object-cover rounded-lg dark:block"
                 />
             </div>
         </section>

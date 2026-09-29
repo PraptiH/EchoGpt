@@ -16,7 +16,7 @@ export default function CapabilitiesSection() {
                             return (
                                 <div
                                     key={capability.title}
-                                    className="rounded-xl border border-line/70 bg-white p-5 shadow-sm transition-shadow hover:shadow-md cursor-pointer"
+                                    className="rounded-xl border border-line/70 bg-card p-5 shadow-sm transition-shadow hover:shadow-md cursor-pointer"
                                 >
                                     <div className="mb-4 flex size-9 items-center justify-center rounded-lg bg-primary/10">
                                         <Icon className="size-4 text-primary" strokeWidth={2} />

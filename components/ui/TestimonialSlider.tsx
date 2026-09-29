@@ -13,12 +13,12 @@ const GAP_PX = 24;
 const MIN_STEP_RATIO = 0.2;
 
 const avatarColors = [
-  "bg-indigo-100 text-indigo-700",
-  "bg-amber-100 text-amber-700",
-  "bg-emerald-100 text-emerald-700",
-  "bg-sky-100 text-sky-700",
-  "bg-rose-100 text-rose-700",
-  "bg-violet-100 text-violet-700",
+  "bg-indigo-100 text-indigo-700 dark:bg-indigo-500/15 dark:text-indigo-300",
+  "bg-amber-100 text-amber-700 dark:bg-amber-500/15 dark:text-amber-300",
+  "bg-emerald-100 text-emerald-700 dark:bg-emerald-500/15 dark:text-emerald-300",
+  "bg-sky-100 text-sky-700 dark:bg-sky-500/15 dark:text-sky-300",
+  "bg-rose-100 text-rose-700 dark:bg-rose-500/15 dark:text-rose-300",
+  "bg-violet-100 text-violet-700 dark:bg-violet-500/15 dark:text-violet-300",
 ];
 
 function initials(name: string) {
@@ -128,7 +128,7 @@ export default function TestimonialSlider({ testimonials }: TestimonialSliderPro
         type="button"
         onClick={() => step("prev")}
         aria-label="Previous testimonial"
-        className="flex size-8 shrink-0 items-center justify-center rounded-full border border-line bg-white p-0 text-ink shadow-sm sm:size-10"
+        className="flex size-8 shrink-0 items-center justify-center rounded-full border border-line bg-card p-0 text-ink shadow-sm sm:size-10"
       >
         <ChevronLeft className="size-4" />
       </button>
@@ -175,7 +175,7 @@ export default function TestimonialSlider({ testimonials }: TestimonialSliderPro
         >
           {testimonials.map((testimonial, index) => (
             <SwiperSlide key={testimonial.name} className="h-auto!">
-              <figure className="flex h-full flex-col rounded-xl border border-line/70 bg-white p-5 shadow-sm sm:p-7">
+              <figure className="flex h-full flex-col rounded-xl border border-line/70 bg-card p-5 shadow-sm sm:p-7">
                 <Quote className="size-4 fill-primary text-primary" aria-hidden />
 
                 <blockquote className="mt-5 text-sm leading-relaxed text-muted-foreground">
@@ -206,7 +206,7 @@ export default function TestimonialSlider({ testimonials }: TestimonialSliderPro
         type="button"
         onClick={() => step("next")}
         aria-label="Next testimonial"
-        className="flex size-8 shrink-0 items-center justify-center rounded-full border border-line bg-white p-0 text-ink shadow-sm sm:size-10"
+        className="flex size-8 shrink-0 items-center justify-center rounded-full border border-line bg-card p-0 text-ink shadow-sm sm:size-10"
       >
         <ChevronRight className="size-4" />
       </button>

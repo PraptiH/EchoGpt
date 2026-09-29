@@ -30,7 +30,7 @@ const socials = [
 
 export default function Footer() {
     return (
-        <footer className="w-full border-t-2 border-primary/80 bg-white px-6">
+        <footer className="w-full border-t-2 border-primary/80 bg-background px-6">
             <div className="mx-auto max-w-6xl">
                 <div className="grid gap-10 py-12 md:py-14 lg:grid-cols-[1fr_auto] lg:gap-16">
                     <div className="max-w-xs">
