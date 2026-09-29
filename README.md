@@ -4,6 +4,8 @@ A marketing landing page for **EchoGPT**, an AI sidebar that brings GPT, Claude,
 
 Built with **Next.js 16 (App Router)**, **React 19**, **TypeScript** and **Tailwind CSS v4**.
 
+**Live site:** [strong-croissant-77d1be.netlify.app](https://strong-croissant-77d1be.netlify.app/)
+
 ## Getting started
 
 ```bash
