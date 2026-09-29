@@ -4,6 +4,7 @@ import HeroSection from "@/components/sections/HeroSection";
 import Models from "@/components/sections/Models";
 import PreviewSection from "@/components/sections/PreviewSection";
 import PricingSection from "@/components/sections/PricingSection";
+import TestimonialSection from "@/components/sections/TestimonialSection";
 import WhyEchoGPT from "@/components/sections/WhyEchoGPT";
 
 export default function Home() {
@@ -16,6 +17,7 @@ export default function Home() {
       <WhyEchoGPT/>
       <PricingSection/>
       <FaqSection/>
+      <TestimonialSection/>
     </div>
   );
 }
